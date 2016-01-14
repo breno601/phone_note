@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+
+<form action="/register" method="POST">
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Register new user</h1>
+            </div>
+
+            <div class="register-form">
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <div class="control-group">
+                    <label for="name_id"></label>
+                    <input type="text" class="name_field" value="" placeholder="name" name="name">
+                </div>
+
+                <div class="control-group">
+                    <label for="email_id"></label>
+                    <input type="text" class="email_field" value="" placeholder="email" name="email">
+                </div>
+
+                <div class="control-group">
+                    <label for="username_id"></label>
+                    <input type="text" class="username_field" value="" placeholder="username" name="username">
+                </div>
+
+                <div class="control-group">
+                    <label for="password_id"></label>
+                    <input type="password" class="password_field" value="" placeholder="password" name="password">
+                </div>
+
+                <input type="submit" value="Register!" class="btn btn-primary btn-large btn-block" >
+                <br>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

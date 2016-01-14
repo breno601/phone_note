@@ -1,0 +1,10 @@
+<div class="js-infinite-item">
+    <ul>
+        <li><b>Name:</b> {{ note.name }}</li>
+        <li> <b>Phone:</b> {{ note.phone_number }}</li>
+        <li><b>Note:</b> {{ note.notes }}</li>
+        <li><b>Call time:</b> {{ note.call_date }}</li>
+    <a hidden class="note-option" href="{{ url_for('edit', id=note.id) }}">edit</a>
+    <a hidden class="note-option" href="{{ url_for('delete', id=note.id) }}">delete</a>
+    </ul>
+</div>

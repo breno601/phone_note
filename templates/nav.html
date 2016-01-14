@@ -1,0 +1,11 @@
+<div class="nav-collapse collapse">
+    <ul class="nav">
+        <li>
+            <a>Welcome, {{g.user.name}} &nbsp</a>
+            <a class="menu-item" href="{{ url_for('note') }}">New note</a> |
+            <a class="menu-item" href="{{ url_for('pdf') }}">Download PDF</a> |
+            <a class="menu-item" href="{{ url_for('sendPdf') }}">Send PDF</a> |
+            <a class="menu-item" href="{{ url_for('logout') }}">Logout</a>
+        </li>
+    </ul>
+</div>

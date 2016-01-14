@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<html>
+{% block body %}
+
+<form action="/login" method="POST">
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Login</h1>
+            </div>
+
+            <div class="login-form">
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <div class="control-group">
+                    <input type="text" class="login-field" value="" placeholder="username" name="username">
+                    <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="control-group">
+                    <input type="password" class="login-field" value="" placeholder="password" name="password">
+                    <label class="login-field-icon fui-lock" for="login-pass"></label>
+                </div>
+
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" >
+                <br>
+                <a href="/register">Register</a>
+                <a href="/forgot">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="/static/dist/js/jquery-1.12.0.js"></script>
+<script src="/static/dist/js/theme.js"></script>
+
+{% endblock %}
+</html>

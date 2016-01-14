@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+
+<div class="notes">
+    <h3>Notes</h3>
+
+    <div class="notes-screen">
+
+        <ul>
+            {% for note in notes %}
+            <li><b>Name:</b> {{ note.name }} </li> <li> <b>Number:</b> {{ note.phone_number }} </li> <li><b>Notes:</b> {{ note.notes }} </li><li><b>Call time:</b> {{ note.call_date }} </li> <br>
+                {% endfor %}
+        </ul>
+
+    </div>
+</div>
+
+{% endblock %}
